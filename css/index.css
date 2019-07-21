@@ -1,0 +1,108 @@
+:root {
+  --article-menu-margin: 40px;
+}
+
+@font-face {
+    font-family: Fira;
+    src: url(../assets/fonts/Fira-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: Raleway-Bold;
+    src: url(../assets/fonts/Raleway-Bold.ttf);
+}
+
+@font-face {
+    font-family: Raleway-Medium;
+    src: url(../assets/fonts/Raleway-Medium.ttf);
+}
+
+@font-face {
+    font-family: Raleway-Regular;
+    src: url(../assets/fonts/Raleway-Regular.ttf);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style-type: none;
+	cursor: default;
+	outline: none;
+}
+
+main {
+	position: relative;
+	min-width: 100vw;
+	min-height: 100vh;
+	z-index: 1;
+	overflow: hidden;
+}
+
+article {
+	min-width: 100vw;
+	min-height: 100vh;
+	border-radius: 10px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	transition: all 0.2s;
+}
+
+.heading-label {
+	text-transform: uppercase;
+	font-family: 'Raleway-Bold', Arial, sans-serif;
+	color: white;
+	font-size: 18px;
+	display: block;
+	margin: 20px;
+}
+
+#menu-toggle {
+	display: none;
+}
+
+#projects {
+	background-image: linear-gradient(-45deg, #1d185a, #4954de);
+	z-index: 2;
+}
+
+#designs {
+	background-image: linear-gradient(-45deg, #4954de, #49ddd8);
+	z-index: 3;
+}
+
+#about_me {
+	background-image: linear-gradient(-45deg, #49ddd8, #009de9);
+	z-index: 4;
+}
+
+#home {
+	background-image: linear-gradient(45deg, #da1b60, #fd6470);
+	z-index: 5;
+}
+
+#menu-toggle:checked ~ main {
+	
+}
+
+#menu-toggle:checked ~ main #projects {
+	top: var(--article-menu-margin);
+	left: var(--article-menu-margin);
+}
+
+#menu-toggle:checked ~ main #designs {
+	top: calc(var(--article-menu-margin) * 2);
+	left: calc(var(--article-menu-margin) * 2);
+}
+
+#menu-toggle:checked ~ main #about_me {
+	top: calc(var(--article-menu-margin) * 3);
+	left: calc(var(--article-menu-margin) * 3);
+}
+
+#menu-toggle:checked ~ main #home {
+	top: calc(var(--article-menu-margin) * 4);
+	left: calc(var(--article-menu-margin) * 4);
+}
