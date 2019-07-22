@@ -1,5 +1,5 @@
 :root {
-  --article-menu-margin: 40px;
+  --article-menu-margin: 45px;
 }
 
 @font-face {
@@ -31,23 +31,45 @@
 	outline: none;
 }
 
+body {
+	display: flex;
+	width: 100vw;
+	min-height: 100vh;
+	justify-content: center;
+	align-content: center;
+	flex-wrap: wrap;
+	background-color: #222;
+}
+
 main {
 	position: relative;
-	min-width: 100vw;
-	min-height: 100vh;
+	width: 98%;
+	min-height: 95vh;
 	z-index: 1;
+	border-radius: 10px;
 	overflow: hidden;
 }
 
 article {
-	min-width: 100vw;
-	min-height: 100vh;
+	min-width: 100%;
+	min-height: 100%;
 	border-radius: 10px;
 	position: absolute;
 	top: 0;
-	left: 0;
+    bottom: 0;
+    left: 0;
+    right: -17px; /* Increase/Decrease this value for cross-browser compatibility */
+    overflow-y: scroll;
+    overflow-x: hidden;
 	z-index: 2;
 	transition: all 0.2s;
+}
+
+p {
+	padding: 1em 2em;
+	font-family: 'Raleway-Regular', Arial, sans-serif;
+	font-size: 16px;
+	color: #fff;
 }
 
 .heading-label {
@@ -56,7 +78,8 @@ article {
 	color: white;
 	font-size: 18px;
 	display: block;
-	margin: 20px;
+	margin: 16px;
+	width: 100%;
 }
 
 #menu-toggle {
@@ -105,4 +128,22 @@ article {
 #menu-toggle:checked ~ main #home {
 	top: calc(var(--article-menu-margin) * 4);
 	left: calc(var(--article-menu-margin) * 4);
+}
+
+.left-forced {
+	left: 100%;
+}
+
+#projects::before, #designs::before, #about_me::before, #home::before {
+    position: absolute;
+    top: 0.3em;
+    left: 0.2em;
+    content: attr(data-title);
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-family: 'Raleway-Regular', Arial, sans-serif;
+    font-size: 15em;
+    font-weight: bold;
+    color: #ffffff;
+    opacity: 0.1;
 }
