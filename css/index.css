@@ -278,14 +278,6 @@ p {
 
 	#home .container {
 		justify-content: space-between;
-		visibility: hidden;
-		opacity: 0;
-		animation-name: appear-animation;
-  		animation-duration: 1s;
-  		animation-delay: 0.35s;
-  		animation-iteration-count: 1;
-  		animation-timing-function: ease;
-  		animation-fill-mode: both;
 	}
 
 	#home .full {
@@ -545,9 +537,4 @@ p {
 @keyframes spread-animation {
   	0%{width: 0;}
 	100%{width: calc(100% - 1em);}
-}
-
-@keyframes appear-animation {
-  	0%{visibility: hidden; opacity: 0;}
-	100%{visibility: visible; opacity: 1;}
 }
