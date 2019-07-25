@@ -29,6 +29,29 @@
     src: url(../assets/fonts/Raleway-Regular.ttf);
 }
 
+#theme-toggle {
+	-webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    -ms-appearance: none !important;
+    -o-appearance: none !important;
+    appearance: none !important;
+	position: absolute;
+	left: -100px;
+	top: -100px;
+	display: none;
+}
+
+#theme-toggle:checked ~ main #home {
+	--white-color: #da1b60;
+	--home-color-one: #202020;
+    --home-color-two: #262626;
+}
+
+#theme-toggle:checked ~ main #home .lang label, #theme-toggle:checked ~ main #home .lang a {
+		background-color: var(--white-color);
+		color: var(--home-color-one);
+}
+
 /* Normalize */
 * {
 	margin: 0;
@@ -97,10 +120,10 @@ article {
 }
 
 .full {
-		display: flex;
-		flex-wrap: wrap;
-		flex-direction: row;
-  		width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+  	width: 100%;
 }
 
 .heading-label {
@@ -115,31 +138,32 @@ article {
 
 
 h1 {
-		font-weight: normal;
-		font-family: 'Raleway-Bold', Arial, sans-serif;
-		font-size: 5em;
-		font-display: auto;
-		color: var(--white-color);
-		text-transform: uppercase;
-		text-align: left;
-	}
+	font-weight: normal;
+	font-family: 'Raleway-Bold', Arial, sans-serif;
+	font-size: 5em;
+	font-display: auto;
+	color: var(--white-color);
+	text-transform: uppercase;
+	text-align: left;
+}
 
 h2 {
-		font-weight: normal;
-		font-family: 'Raleway-Regular', Arial, sans-serif;
-		font-size: 1em;
-		font-display: auto;
-		color: var(--white-color);
-		text-transform: uppercase;
-		letter-spacing: 1em;
-	}
+	font-weight: normal;
+	font-family: 'Raleway-Regular', Arial, sans-serif;
+	font-size: 1em;
+	font-display: auto;
+	color: var(--white-color);
+	text-transform: uppercase;
+	letter-spacing: 1em;
+}
 
 p {
 	padding: 1em 0;
 	font-family: 'Raleway-Regular', Arial, sans-serif;
 	font-size: 1em;
-	color: #fff;
+	color: var(--white-color);
 	line-height: 1.25em;
+	letter-spacing: 1px;
 }
 
 
@@ -265,7 +289,7 @@ p {
 		font-size: 0.75em;
 		font-display: auto;
 		letter-spacing: 2px;
-		opacity: 0.1;
+		opacity: 0.8;
 		padding-top: 0.3em;
 		transition: all 0.3s;
 	}
@@ -404,7 +428,7 @@ p {
 		flex-direction: row;
 	}
 
-	#home .lang span {
+	#home .lang a, #home .lang label {
 		font-weight: normal;
 		font-family: Arial, sans-serif;
 		font-size: 0.75em;
@@ -414,7 +438,7 @@ p {
 		border: solid 1px var(--white-color);
 		padding: 2px;
 		height: 2em;
-		width: 2em;
+		text-decoration: none;
 		text-align: center;
 		display: flex;
 		flex-direction: column;
@@ -422,12 +446,12 @@ p {
 		opacity: 0.85;
 	}
 
-	#home .lang span:hover {
+	#home .lang a:hover, #home .lang label:hover {
 		background: rgba(255,255,255,0.2);
 		opacity: 1;
 	}
 
-	#home .lang span:nth-child(2) {
+	#home .lang a:nth-child(2), #home .lang label:nth-child(2) {
 		margin-left: 4px;
 	}
 
