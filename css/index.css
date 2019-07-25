@@ -278,6 +278,13 @@ p {
 
 	#home .container {
 		justify-content: space-between;
+		opacity: 0;
+		animation-name: blink-animation;
+  		animation-duration: 0.5s;
+  		animation-iteration-count: 1;
+  		animation-timing-function: ease;
+  		animation-delay: 0.5s;
+  		animation-fill-mode: both;
 	}
 
 	#home .full {
@@ -330,7 +337,7 @@ p {
   		animation-duration: 1s;
   		animation-iteration-count: 1;
   		animation-timing-function: ease;
-  		animation-delay: 1s;
+  		animation-delay: 1.5s;
   		animation-fill-mode: both;
 	}
 

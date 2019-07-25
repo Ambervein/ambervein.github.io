@@ -7,10 +7,11 @@
 	let menu_toggle = document.getElementById("menu-toggle");
 	let state = false; //tab is opened
 	let article_id; //currently opened tab
-
+	/*
 	if(menu_toggle.checked == true) {
 		menu_toggle.checked = false;
 	}
+	*/
 
 	for(let i = 0; i < articles.length; i++) {
 
