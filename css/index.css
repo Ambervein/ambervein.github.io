@@ -186,7 +186,7 @@ p {
 	width: 50%;
 	transition: all 0.2s;
 }
-
+/*
 #projects::before, #designs::before, #about_me::before, #home::before {
     position: absolute;
     pointer-events: none;
@@ -201,6 +201,7 @@ p {
     color: #ffffff;
     opacity: 0.1;
 }
+*/
 
 /* Articles */
 #projects {
