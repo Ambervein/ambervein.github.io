@@ -202,6 +202,7 @@ p {
     opacity: 0.1;
 }
 
+
 /* Articles */
 #projects {
 	background-image: linear-gradient(-45deg, #1d185a, #4954de);
@@ -280,10 +281,17 @@ p {
 		justify-content: space-between;
 		opacity: 0;
 		animation-name: blink-animation;
+<<<<<<< HEAD
   		animation-duration: 0.5s;
   		animation-iteration-count: 1;
   		animation-timing-function: ease;
   		animation-delay: 0.5s;
+=======
+  		animation-duration: 1s;
+  		animation-iteration-count: 1;
+  		animation-timing-function: ease;
+  		animation-delay: 1s;
+>>>>>>> 575c49e6aec6499577b15c9efcdc18428ba21bcc
   		animation-fill-mode: both;
 	}
 
@@ -344,7 +352,7 @@ p {
 	#home .heading-label h2 {
 		position: relative;
 	}
-
+	
 	#home .heading-label h2:after {
 		content: '';
 		position: absolute;
@@ -360,7 +368,8 @@ p {
   		animation-timing-function: ease;
   		animation-delay: 0.2s;
   		animation-fill-mode: both;
-	}	
+	}
+	
 
 	/*#home h1::selection, #home h2::selection, #home h3::selection, #home p::selection, #home .copy::selection, #home .lang span::selection {
 		color: var(--home-color-one);
