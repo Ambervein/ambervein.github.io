@@ -118,6 +118,7 @@ h1 {
 		font-weight: normal;
 		font-family: 'Raleway-Bold', Arial, sans-serif;
 		font-size: 5em;
+		font-display: auto;
 		color: var(--white-color);
 		text-transform: uppercase;
 		text-align: left;
@@ -127,6 +128,7 @@ h2 {
 		font-weight: normal;
 		font-family: 'Raleway-Regular', Arial, sans-serif;
 		font-size: 1em;
+		font-display: auto;
 		color: var(--white-color);
 		text-transform: uppercase;
 		letter-spacing: 1em;
@@ -261,6 +263,7 @@ p {
 		font-weight: normal;
 		font-family: 'Raleway-Regular', Arial, sans-serif;
 		font-size: 0.75em;
+		font-display: auto;
 		letter-spacing: 2px;
 		opacity: 0.1;
 		padding-top: 0.3em;
