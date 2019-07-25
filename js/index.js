@@ -6,6 +6,10 @@
 	let state = false; //tab is opened
 	let article_id; //currently opened tab
 
+	if(menu_toggle.checked == true) {
+		menu_toggle.checked = false;
+	}
+
 	for(let i = 0; i < articles.length; i++) {
 
 		//articles[i].addEventListener("click", articles_toggle);
@@ -44,7 +48,8 @@
 		if(menu_toggle.checked == false && state == false) {
 			for(let i = 0; i < articles.length; i++) {	articles[i].style.transform = "translateX(" + (100) + "%)";	}
 			document.getElementById(article_id).style.transform = "translateX(" + (0) + "%)";
-			menu_toggle.click;
+			//menu_toggle.click;
+			state = true;
 		}
 	}
 
