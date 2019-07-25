@@ -1,5 +1,7 @@
 (function() {
 
+	console.log("ДА, ЭТА ПРИБЛУДА НЕ РАБОТАЕТ В БРАУЗЕРАХ С ОТКЛЮЧЕННЫМ JS. И МНЕ ПЛЕВАТЬ, Т.К. ЗАКОНЧЕННЫЕ ПАРАНОИКИ И МАМОНТЫ, СИДЯЩИЕ С IE6, МАЛО ПОХОЖИ НА АДЕКВАТНЫХ ЮЗЕРОВ И СКОРО ВЫМРУТ. ДЕРЖУ В КУРСЕ");
+
 	let articles = document.getElementsByTagName("article");
 	let labels = document.getElementsByTagName("label");
 	let menu_toggle = document.getElementById("menu-toggle");
@@ -53,6 +55,21 @@
 		}
 	}
 
+	document.getElementById("skills").addEventListener("click", skills);
+
+	function skills() {
+
+		let about = document.querySelector('label[data-id="about_me"]');
+		let home = document.querySelector('label[data-id="home"]');
+
+		setTimeout(home.click(), 200);
+		setTimeout(abc, 300);
+
+		function abc () {
+			setTimeout(about.click(), 200);
+		}
+	
+	}
 
 
 })();
