@@ -186,7 +186,7 @@ p {
 	width: 50%;
 	transition: all 0.2s;
 }
-/*
+
 #projects::before, #designs::before, #about_me::before, #home::before {
     position: absolute;
     pointer-events: none;
@@ -201,7 +201,7 @@ p {
     color: #ffffff;
     opacity: 0.1;
 }
-*/
+
 
 /* Articles */
 #projects {
@@ -345,14 +345,14 @@ p {
 	#home .heading-label h2 {
 		position: relative;
 	}
-
+	/*
 	#home .heading-label h2:after {
 		content: '';
 		position: absolute;
 		top: 110%;
 		left: 0;
 		width: 0;
-		/*width: calc(100% - 1em);*/
+		width: calc(100% - 1em);
 		background: var(--white-color);
 		height: 2px;
 		animation-name: spread-animation;
@@ -361,7 +361,8 @@ p {
   		animation-timing-function: ease;
   		animation-delay: 0.2s;
   		animation-fill-mode: both;
-	}	
+	}
+	*/
 
 	/*#home h1::selection, #home h2::selection, #home h3::selection, #home p::selection, #home .copy::selection, #home .lang span::selection {
 		color: var(--home-color-one);
