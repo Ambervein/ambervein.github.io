@@ -36,6 +36,7 @@
 
 		article_id = this.dataset.id;
 		location.hash = this.dataset.id + '_tab';
+		
 
 		if(menu_toggle.checked == true) {
 			for(let i = 0; i < articles.length; i++) {	articles[i].style.transform = "translateX(" + (100) + "%)";	}
