@@ -7,27 +7,31 @@
 	let menu_toggle = document.getElementById("menu-toggle");
 	let state = false; //tab is opened
 	let article_id; //currently opened tab
-	/*
-	if(menu_toggle.checked == true) {
-		menu_toggle.checked = false;
+	
+	//saving current tab to page session for nice page refresh UX
+	window.addEventListener("load", loadSession);
+
+	function loadSession() {
+		let currentOpenedTab = sessionStorage.getItem('currentTab');
+		if (currentOpenedTab !== undefined && currentOpenedTab !== null) {
+			menu_toggle.click();
+			setTimeout(() => {document.querySelector('label[data-id="' + currentOpenedTab + '"]').click();}, 300);
+		}
 	}
-	*/
 
+	//labels getting their menu triggers
 	for(let i = 0; i < articles.length; i++) {
-
-		//articles[i].addEventListener("click", articles_toggle);
 		labels[i].addEventListener("click", articles_toggle);
 	}
 
+	//close button gets close function
 	menu_toggle.addEventListener("click", close);
 
+	//catching click event on label, getting data-id of event target label, opening menu and push up article with same id OR closing menu
 	function articles_toggle(event) {
 
-		//event.stopImmediatePropagation();
 		article_id = this.dataset.id;
-		//alert(article_id);
-		
-		//if(event.target.nodeName == "LABEL" || event.target.nodeName == "H2" || event.target.nodeName == "DIV" || event.target.nodeName == "SPAN") {	
+		sessionStorage.setItem('currentTab', this.dataset.id);
 
 		if(menu_toggle.checked == true) {
 			for(let i = 0; i < articles.length; i++) {	articles[i].style.transform = "translateX(" + (100) + "%)";	}
@@ -46,16 +50,17 @@
 		
 		}
 
+	//close button function
 	function close() {
 
 		if(menu_toggle.checked == false && state == false) {
 			for(let i = 0; i < articles.length; i++) {	articles[i].style.transform = "translateX(" + (100) + "%)";	}
 			document.getElementById(article_id).style.transform = "translateX(" + (0) + "%)";
-			//menu_toggle.click;
 			state = true;
 		}
 	}
 
+	//skills button at home article sends user to skills article
 	document.getElementById("skills").addEventListener("click", skills);
 
 	function skills() {

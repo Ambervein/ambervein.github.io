@@ -109,6 +109,25 @@ article {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
+	justify-content: space-between;
+	opacity: 0;
+	animation-name: blink-animation;
+  	animation-duration: 0.5s;
+  	animation-iteration-count: 1;
+  	animation-timing-function: ease;
+  	animation-delay: 0.5s;
+  	animation-fill-mode: both;		
+}
+
+.full {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+  	width: 100%;
+	align-items: center;
+  	justify-content: center;
+  	height: 4em;
+  	border: solid 1px var(--white-color);
 }
 
 .half {
@@ -117,13 +136,39 @@ article {
 	flex-direction: row;
 	width: 50%;
 	height: auto;
+	justify-content: flex-start;
+	border: solid 1px var(--white-color);
 }
 
-.full {
+.fourth {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
-  	width: 100%;
+	width: 25%;
+	height: auto;
+	border: solid 1px var(--white-color);
+	border-top: none;
+	border-bottom: none;
+}
+
+.fourth:nth-child(2) {
+	border-right: none;
+	border-left: none;
+}
+
+.fourth:nth-child(3) {
+	border-right: none;
+}
+
+.left {
+	border-right: none;
+	border-top: none;
+	border-bottom: none;
+}
+
+.right {
+	border-top: none;
+	border-bottom: none;
 }
 
 .heading-label {
@@ -300,40 +345,8 @@ p {
 		transition: all 0.3s;
 	}
 
-	#home .container {
-		justify-content: space-between;
-		opacity: 0;
-		animation-name: blink-animation;
-  		animation-duration: 0.5s;
-  		animation-iteration-count: 1;
-  		animation-timing-function: ease;
-  		animation-delay: 0.5s;
-  		animation-fill-mode: both;
-	}
-
-	#home .full {
-		align-items: center;
-  		justify-content: center;
-  		height: 4em;
-  		border: solid 1px var(--white-color);
-	}
-
 	#home .half {
-		flex-direction: column;
-		justify-content: center;
 		padding: 0 1em;
-		border: solid 1px var(--white-color);
-	}
-
-	#home .left {
-		border-right: none;
-		border-top: none;
-		border-bottom: none;
-	}
-
-	#home .right {
-		border-top: none;
-		border-bottom: none;
 	}
 
 	#home .left h1 {
@@ -342,6 +355,7 @@ p {
   		animation-duration: 2s;
   		animation-iteration-count: 1;
   		animation-timing-function: ease;
+  		animation-delay: 1s;
   		animation-fill-mode: both;
 	}
 
@@ -351,7 +365,7 @@ p {
   		animation-duration: 1s;
   		animation-iteration-count: 1;
   		animation-timing-function: ease;
-  		animation-delay: 0.5s;
+  		animation-delay: 1.5s;
   		animation-fill-mode: both;
 	}
 
@@ -361,37 +375,13 @@ p {
   		animation-duration: 1s;
   		animation-iteration-count: 1;
   		animation-timing-function: ease;
-  		animation-delay: 1.5s;
+  		animation-delay: 2s;
   		animation-fill-mode: both;
 	}
 
 	#home .heading-label h2 {
 		position: relative;
 	}
-
-	#home .heading-label h2:after {
-		content: '';
-		position: absolute;
-		top: 110%;
-		left: 0;
-		width: 0;
-		/*width: calc(100% - 1em);*/
-		background: var(--white-color);
-		height: 2px;
-		animation-name: spread-animation;
-		animation-duration: 1s;
-  		animation-iteration-count: 1;
-  		animation-timing-function: ease;
-  		animation-delay: 0.2s;
-  		animation-fill-mode: both;
-	}	
-
-	/*#home h1::selection, #home h2::selection, #home h3::selection, #home p::selection, #home .copy::selection, #home .lang span::selection {
-		color: var(--home-color-one);
-		background: white;
-
-	}
-	*/
 
 	#home .semi-footer {
 		display: flex;
@@ -405,7 +395,7 @@ p {
   		animation-duration: 1s;
   		animation-iteration-count: 1;
   		animation-timing-function: ease;
-  		animation-delay: 0.5s;
+  		animation-delay: 1.5s;
   		animation-fill-mode: both;
 	}
 
@@ -469,14 +459,6 @@ p {
 		text-decoration: underline;
 		text-decoration-style: solid;
 	}
-
-
-
-	/*
-	#home .container h1 span {
-		animation: blink-animation 1s linear infinite;
-	}
-	*/
 
 /* Close button */
 #menu-toggle {
