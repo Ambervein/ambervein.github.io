@@ -8,15 +8,19 @@
 	let state = false; //tab is opened
 	let article_id; //currently opened tab
 	
-	//saving current tab to page session for nice page refresh UX
+	//saving current tab to page session for better page refresh UX
 	window.addEventListener("load", loadSession);
 
 	function loadSession() {
-		let currentOpenedTab = sessionStorage.getItem('currentTab');
-		if (currentOpenedTab !== undefined && currentOpenedTab !== null) {
+		let currentLocation = window.location.href;
+		let currentLocationHash = window.location.hash;
+		let tabName = currentLocationHash.slice(1, -4);
+		
+		//alert(tabName);
+		if (tabName.length > 0) {
 			menu_toggle.click();
-			setTimeout(() => {document.querySelector('label[data-id="' + currentOpenedTab + '"]').click();}, 300);
-		}
+			setTimeout(() => {document.querySelector('label[data-id="' + tabName + '"]').click();}, 250);
+		}		
 	}
 
 	//labels getting their menu triggers
@@ -31,7 +35,7 @@
 	function articles_toggle(event) {
 
 		article_id = this.dataset.id;
-		sessionStorage.setItem('currentTab', this.dataset.id);
+		location.hash = this.dataset.id + '_tab';
 
 		if(menu_toggle.checked == true) {
 			for(let i = 0; i < articles.length; i++) {	articles[i].style.transform = "translateX(" + (100) + "%)";	}

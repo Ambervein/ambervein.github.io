@@ -5,6 +5,9 @@
   --home-color-one: #da1b60;
   --home-color-two: #fd6470;
 
+  --about-color-one: #49ddd8;
+  --about-color-two: #009de9;
+
   --white-color: #fff;
 }
 
@@ -45,11 +48,14 @@
 	--white-color: #da1b60;
 	--home-color-one: #202020;
     --home-color-two: #262626;
+    outline: solid 2px var(--white-color);
 }
 
-#theme-toggle:checked ~ main #home .lang label, #theme-toggle:checked ~ main #home .lang a {
-		background-color: var(--white-color);
-		color: var(--home-color-one);
+#theme-toggle:checked ~ main #about_me {
+	--white-color: #49ddd8;
+	--about-color-one: #202020;
+    --about-color-two: #262626;
+    outline: solid 2px var(--white-color);
 }
 
 /* Normalize */
@@ -126,7 +132,7 @@ article {
   	width: 100%;
 	align-items: center;
   	justify-content: center;
-  	height: 4em;
+  	min-height: 4em;
   	border: solid 1px var(--white-color);
 }
 
@@ -268,7 +274,7 @@ p {
     font-size: 12em;
     font-weight: bold;
     color: #ffffff;
-    opacity: 0.1;
+    opacity: 0.08;
 }
 
 /* Articles */
@@ -283,9 +289,85 @@ p {
 }
 
 #about_me {
-	background-image: linear-gradient(-45deg, #49ddd8, #009de9);
+	background-image: linear-gradient(-45deg, var(--about-color-one), var(--about-color-two));
 	z-index: 4;
 }
+
+	#about_me .fourth {
+		padding: 1em;
+		flex-direction: column;
+	}
+
+	#about_me h3 {
+		font-weight: 100;
+		font-family: Arial, sans-serif;
+		font-size: 1.3em;
+		letter-spacing: 2px;
+		color: var(--white-color);
+	}
+
+	#about_me ul {
+		list-style: none;
+		list-style-type: none;
+		padding: 0;
+		margin: 1em;
+	}
+
+	#about_me li {
+		font-weight: normal;
+		font-family: 'Raleway-Regular', Arial, sans-serif;
+		font-size: 0.85em;
+		font-display: auto;
+		letter-spacing: 2px;
+		color: var(--white-color);
+		padding: 0.25em 0;
+		margin-left: 0.25em;
+		position: relative;
+	}
+
+	#about_me li:hover {
+		text-decoration: underline;
+	}
+
+	#about_me li:before {
+		content: '';
+		position: absolute;
+		left: -1.25em;
+		top: 0.5em;
+		height: 0.45em;
+		width: 0.45em;
+		border: solid 1px var(--white-color);
+	}
+
+	#about_me li:hover:before {
+		background: var(--white-color);
+	}
+
+	#about_me .full {
+		padding: 0 1em;
+	}
+
+	#about_me .full p {
+		font-weight: normal;
+		font-family: 'Raleway-Regular', Arial, sans-serif;
+		font-size: 0.85em;
+		font-display: auto;
+		letter-spacing: 2px;
+		color: var(--white-color);
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #home {
 	background-image: linear-gradient(45deg, var(--home-color-one), var(--home-color-two));
