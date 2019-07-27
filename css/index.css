@@ -54,28 +54,28 @@
 	--white-color: #da1b60;
 	--home-color-one: #202020;
     --home-color-two: #262626;
-    outline: solid 2px var(--white-color);
+    outline: solid 1px var(--white-color);
 }
 
 #theme-toggle:checked ~ main #about_me {
 	--white-color: #FD6585;
 	--about-color-one: #202020;
     --about-color-two: #262626;
-    outline: solid 2px var(--white-color);
+    outline: solid 1px var(--white-color);
 }
 
 #theme-toggle:checked ~ main #projects {
 	--white-color: #B122E5;
 	--projects-color-one: #202020;
     --projects-color-two: #262626;
-    outline: solid 2px var(--white-color);
+    outline: solid 1px var(--white-color);
 }
 
 #theme-toggle:checked ~ main #designs {
 	--white-color: #C32BAC;
 	--designs-color-one: #202020;
     --designs-color-two: #262626;
-    outline: solid 2px var(--white-color);
+    outline: solid 1px var(--white-color);
 }
 
 #theme-toggle:checked ~ main #projects::before, #theme-toggle:checked ~ main #designs::before, #theme-toggle:checked ~ main #about_me::before, #theme-toggle:checked ~ main #home::before {
@@ -235,7 +235,6 @@ article {
 	justify-content: space-between;
 	align-content: center;
 }
-
 
 h1 {
 	font-weight: normal;
@@ -644,7 +643,7 @@ p {
 
 	#home .lang a, #home .lang label {
 		font-weight: normal;
-		font-family: Arial, sans-serif;
+		font-family: 'Raleway-Regular', Arial, sans-serif;
 		font-size: 0.75em;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
@@ -683,7 +682,6 @@ p {
 		text-decoration: underline;
 		text-decoration-style: solid;
 	}
-
 
 /* Close button */
 #menu-toggle {
@@ -730,25 +728,65 @@ p {
 	visibility: hidden;
 }
 
-#menu-toggle:checked ~ main article .heading-label h2:after {
-	visibility: hidden;
-}	
-
 #menu-toggle:checked ~ main article .heading-label .menu-icon {
 	display: none;
 }
 
 #menu-toggle:checked ~ main article {
-	padding-top: 0.8em;
+	padding-top: 0;
+}
+
+#menu-toggle:checked ~ main article .heading-label {
+	height: 47px;
+}
+
+.heading-label h2 {
+	margin-left: 2px;
+	position: relative;
+}
+
+.heading-label h2:after {
+	content: '...';
+	position: absolute;
+	top: 50%;
+	left: -0.5em;
+	transform: translate(-100%, -50%);
+	border: solid 1px var(--white-color);
+	height: 23px;
+	width: 23px;
+	opacity: 0;
+	text-align: center;
+	letter-spacing: 0;
+}
+
+#menu-toggle:checked ~ main article .heading-label h2:after {
+	opacity: 1;
+}
+
+#menu-toggle:checked ~ main article .heading-label h2:hover:after {
+	background-color: var(--white-color);
+}
+
+#theme-toggle:checked ~ main article .heading-label h2 {
+	margin-left: 0;
 }
 
 #menu-toggle:checked ~ main article .heading-label h2 {
 	font-size: 80%;
+	height: 100%;
 	opacity: 0.8;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding-left: 1em;
+	min-width: 16em;
+	outline: solid 1px var(--white-color);
 }
 
 #menu-toggle:checked ~ main article .heading-label h2:hover {
 	opacity: 1;
+	background-color: rgba(255,255,255,0.1);
 }
 
 #menu-toggle:checked ~ main #projects {

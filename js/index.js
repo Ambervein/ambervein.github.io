@@ -82,5 +82,21 @@
 	
 	}
 
+	document.getElementById("theme-button").addEventListener("click", themeToggle);
+	let themeSwitch = document.getElementById("theme-toggle");
+
+	//themeToggle();
+	//window.addEventListener("load", themeToggle);
+	if (themeSwitch.checked === true) {	document.getElementById("theme-button").innerHTML = 'LIGHT THEME';}
+	else {	document.getElementById("theme-button").innerHTML = 'DARK THEME';	}
+	
+	function themeToggle() {
+
+		if (themeSwitch.checked === true) {	document.getElementById("theme-button").innerHTML = 'DARK THEME';}
+		else {	document.getElementById("theme-button").innerHTML = 'LIGHT THEME';	}
+
+	}
+	
+
 
 })();
