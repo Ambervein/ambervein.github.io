@@ -78,9 +78,6 @@
     outline: solid 1px var(--white-color);
 }
 
-#theme-toggle:checked ~ main #projects::before, #theme-toggle:checked ~ main #designs::before, #theme-toggle:checked ~ main #about_me::before, #theme-toggle:checked ~ main #home::before {
-    opacity: 0.03;
-}
 
 #theme-toggle:checked ~ main article h2, #theme-toggle:checked ~ main article h3 {
 	font-family: 'Raleway-Bold', Arial, sans-serif;
@@ -120,7 +117,7 @@ main {
 article {
 	min-width: 100%;
 	min-height: 100%;
-	padding: 2em 2.5em;
+	padding: 2em var(--article-menu-margin);
 	position: absolute;
 	top: 0;
     bottom: 0;
@@ -310,11 +307,15 @@ p {
 	transition: all 0.2s;
 }
 
-#projects::before, #designs::before, #about_me::before, #home::before {
-    position: absolute;
+#projects::after, #designs::after, #about_me::after, #home::after {
+    width: 100%;
     pointer-events: none;
-    bottom: 0;
-    right: 0.2em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-top: -1.3em;
+    margin-bottom: 0.2em;
     content: attr(data-title);
     text-transform: uppercase;
     white-space: nowrap;
@@ -322,7 +323,23 @@ p {
     font-size: 12em;
     font-weight: bold;
     color: #ffffff;
-    opacity: 0.08;
+    opacity: 0;	
+	animation-name: blink-animation-pseudo;
+  	animation-duration: 1s;
+  	animation-iteration-count: 1;
+  	animation-timing-function: ease;
+  	animation-delay: 2.5s;
+  	animation-fill-mode: both;			
+}
+
+#theme-toggle:checked ~ main #projects::after, #theme-toggle:checked ~ main #designs::after, #theme-toggle:checked ~ main #about_me::after, #theme-toggle:checked ~ main #home::after {
+    opacity: 0;	
+	animation-name: blink-animation-pseudo-dark;
+  	animation-duration: 1s;
+  	animation-iteration-count: 1;
+  	animation-timing-function: ease;
+  	animation-delay: 2.5s;
+  	animation-fill-mode: both;		
 }
 
 /* Articles */
@@ -741,7 +758,7 @@ p {
 }
 
 .heading-label h2 {
-	margin-left: 2px;
+	margin-left: 1px;
 	position: relative;
 }
 
@@ -810,7 +827,12 @@ p {
 	100%{opacity: 1;}
 }
 
-@keyframes spread-animation {
-  	0%{width: 0;}
-	100%{width: calc(100% - 1em);}
+@keyframes blink-animation-pseudo {
+  	0%{opacity: 0;}
+	100%{opacity: 0.08;}
+}
+
+@keyframes blink-animation-pseudo-dark {
+  	0%{opacity: 0;}
+	100%{opacity: 0.03;}
 }
