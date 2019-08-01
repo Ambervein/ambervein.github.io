@@ -39,7 +39,7 @@
 		
 
 		if(menu_toggle.checked == true) {
-			for(let i = 0; i < articles.length; i++) {	articles[i].style.transform = "translateX(" + (100) + "%)";	}
+			for(let i = 0; i < articles.length; i++) {	articles[i].style.transform = "translateX(" + (100) + "%)";	articles[i].scrollTop = 0;}
 			document.getElementById(article_id).style.transform = "translateX(" + (0) + "%)";
 			state = true;
 		}
@@ -59,7 +59,7 @@
 	function close() {
 
 		if(menu_toggle.checked == false && state == false) {
-			for(let i = 0; i < articles.length; i++) {	articles[i].style.transform = "translateX(" + (100) + "%)";	}
+			for(let i = 0; i < articles.length; i++) {	articles[i].style.transform = "translateX(" + (100) + "%)";	articles[i].scrollTop = 0;}
 			document.getElementById(article_id).style.transform = "translateX(" + (0) + "%)";
 			state = true;
 		}
