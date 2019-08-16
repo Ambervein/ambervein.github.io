@@ -213,14 +213,18 @@ function keyboard_control() {
 	// getting number of current image from data-pic, using it as index in images[] collection 
 	// and sending data-url of prev/next element in collection as arg to bg_change()
 
+	let modal_image = document.getElementById("modal_image");
+
 	if(e.keyCode === 39 && pic_number < img_counter-1) {
 		++pic_number;
 		img_curr(pic_number, img_counter);
+		modal_image.src = "";
 		bg_change(images[pic_number].dataset.url_large);}
 
 	if(e.keyCode === 37 && pic_number > 0) {
 		--pic_number;
 		img_curr(pic_number, img_counter);
+		modal_image.src = "";
 		bg_change(images[pic_number].dataset.url_large);}
 
 	});
@@ -234,9 +238,12 @@ function modal_right_nav() {
 	let images  = gallery_container.getElementsByTagName("label");
 	let img_counter = gallery_container.getElementsByTagName("label").length;
 
+	let modal_image = document.getElementById("modal_image");
+
 		if(pic_number < img_counter-1) {
 			++pic_number;
 			img_curr(pic_number, img_counter);
+			modal_image.src = "";
 			bg_change(images[pic_number].dataset.url_large);}
 
 }
@@ -247,11 +254,14 @@ function modal_left_nav() {
 	let images  = gallery_container.getElementsByTagName("label");
 	let img_counter = gallery_container.getElementsByTagName("label").length;
 
+	let modal_image = document.getElementById("modal_image");
+
 	if(modal.checked == true) {
 		
 		if(pic_number > 0) {
 			--pic_number;
 			img_curr(pic_number, img_counter);
+			modal_image.src = "";
 			bg_change(images[pic_number].dataset.url_large);}
 
 	}
