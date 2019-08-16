@@ -3,13 +3,13 @@
 // GLOBALS =======================================================================================================================================
 
 // URLs list
-const URL = ["assets/images/designs/1_small.jpg","assets/images/designs/2_small.jpg","assets/images/designs/3_small.jpg","assets/images/designs/4_small.jpg","assets/images/designs/5_small.jpg","assets/images/designs/6_small.jpg","assets/images/designs/7_small.png","assets/images/designs/8_small.png","assets/images/designs/9_small.png","assets/images/designs/10_small.png"];
-const URL_large = ["assets/images/designs/1_big.jpg","assets/images/designs/2_big.jpg","assets/images/designs/3_big.jpg","assets/images/designs/4_big.jpg","assets/images/designs/5_big.jpg","assets/images/designs/6_big.jpg","assets/images/designs/7_big.png","assets/images/designs/8_big.png","assets/images/designs/9_big.png","assets/images/designs/10_big.png"];
+const URL = ["assets/images/designs/1_small.png","assets/images/designs/2_small.png","assets/images/designs/3_small.png","assets/images/designs/4_small.png","assets/images/designs/5_small.png","assets/images/designs/6_small.png","assets/images/designs/7_small.png","assets/images/designs/8_small.png","assets/images/designs/9_small.png","assets/images/designs/10_small.png"];
+const URL_large = ["assets/images/designs/1_big.png","assets/images/designs/2_big.png","assets/images/designs/3_big.png","assets/images/designs/4_big.png","assets/images/designs/5_big.png","assets/images/designs/6_big.png","assets/images/designs/7_big.png","assets/images/designs/8_big.png","assets/images/designs/9_big.png","assets/images/designs/10_big.png"];
 
 let placeholder = "assets/images/designs/placeholder.png";
 
-const Titles = ["Art Wood Design","Sushi Weka","Amarant Labs","Roster","Brondomus","BookMark","Title 7","Title 8","Title 9","Title 10"];
-const Subtitles = ["Logo and business card design for custom wood furniture company","Logo and business card design for sushi delivery company","Logo and business card design for medical equipment supplier","Logo and business card design for Roster web-studio","Logo and business card design for cottage building company","Logo and business card design for copywriting agency","SubTitle 7","SubTitle 8","SubTitle 9","SubTitle 10"];
+const Titles = ["Title 1","Title 2","Title 3","Title 4","Title 5","Title 6","Title 7","Title 8","Title 9","Title 10"];
+const Subtitles = ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat elit vel velit aliquet, sed auctor mi faucibus.","SubTitle 2","SubTitle 3","SubTitle 4","SubTitle 5","SubTitle 6","SubTitle 7","SubTitle 8","SubTitle 9","SubTitle 10"];
 const Description = [];
 
 // grabbing gallery containers
@@ -32,17 +32,28 @@ function modal_bg() {
 	pic_url = this.dataset.url;
 	pic_url_large = this.dataset.url_large;
 
-	let placeholder_url = placeholder;
+	let placeholder_url = "url(" + placeholder + ")";
+
+	/*
+
+	if (pic_url_large == null || pic_url_large == undefined || pic_url_large === "") {	document.getElementById("modal_inner_div").style.backgroundImage = placeholder_url;	}
+	else {	document.getElementById("modal_inner_div").style.backgroundImage = url;	}	
+
+	*/
 
 	document.getElementsByClassName("modal")[0].scrollTop = 0;
 
-	let modal_inner_div = document.getElementById("modal_inner_div");
-	let modal_image = document.getElementById("modal_image");
+	// modifying snapshot url for using bigger image
+	/*
+	let insert = '_big';
+	let position = '-4'
+	let big_pic_url = [pic_url.slice(0, position), insert, pic_url.slice(position)].join('');
+	*/
 
-	if (pic_url_large == 'null' || pic_url_large == 'undefined' || pic_url_large === "") 
-		{	modal_image.src = placeholder_url;	}
-	else 
-		{	modal_image.src = pic_url_large;	}
+	let modal_inner_div = document.getElementById("modal_inner_div");
+
+	if (pic_url_large == 'null' || pic_url_large == 'undefined' || pic_url_large === "") {	modal_inner_div.style.backgroundImage = placeholder_url;	}
+	else {	modal_inner_div.style.backgroundImage = "url(" + pic_url_large + ")";	}
 
 	// counter "pic XX of XX"
 	let img_total = gallery_container.getElementsByTagName("label").length;
@@ -141,13 +152,6 @@ function modal_build() {
 				nav_right_button.className = "modal-nav";
 				nav_right_button.innerHTML = "<svg class='icon'><use xlink:href='#next'></use></svg>";
 
-				let modal_image = document.createElement('img');
-				modal_image.className = "modal-image";
-				modal_image.id = "modal_image";
-
-				let modal_image_container = document.createElement('div');
-				modal_image_container.className = "modal-image-container";
-
 				let modal_inner_counter = document.createElement('div');
 				modal_inner_counter.className = "modal__inner__counter";
 				modal_inner_counter.id = "modal_inner_counter_div";
@@ -155,18 +159,13 @@ function modal_build() {
 		
 	let modals_container = document.getElementById("modals-container");
 
-
 	modals_container.appendChild(modal_input);
 	modals_container.appendChild(modal_div);
 	modal_div.appendChild(label_bg);
 	label_bg.appendChild(modal_inner);
 	
 	modal_inner.appendChild(nav_left_button);
-	modal_inner.appendChild(modal_image_container);
-
-		modal_image_container.appendChild(modal_image);
-		modal_image_container.appendChild(modal_inner_counter);
-	
+	label_bg.appendChild(modal_inner_counter);
 	modal_inner.appendChild(nav_right_button);
 
 	modal_inner.addEventListener('click', function(evt) { evt.preventDefault(); evt.stopPropagation();}, false);
@@ -189,9 +188,7 @@ function img_curr(a,b) {
 		let pic_current = a + 1;
 		let img_count = b;
 
-		let href_link = '"'+URL_large[pic_current-1]+'"';
-
-		document.getElementById("modal_inner_counter_div").innerHTML = pic_current + "  /  " + img_count + "<br> - <br>" + Subtitles[pic_current-1] + "<br> <span onclick='location.href="+href_link+"'>Full size image</span>";
+		document.getElementById("modal_inner_counter_div").innerHTML = pic_current + "  /  " + img_count + "<br> - <br>" + Subtitles[pic_current-1];
 }
 
 // gallery navigation
@@ -257,13 +254,11 @@ function modal_left_nav() {
 
 // changing large image in modal to new image with recieved url
 function bg_change(pic_url) {
-	let url = pic_url;
-	let placeholder_url = placeholder;
+	let url = "url(" + pic_url + ")";
+	let placeholder_url = "url(" + placeholder + ")";
 
-	let modal_image = document.getElementById("modal_image");
-
-	if (pic_url == 'null' || pic_url == 'undefined' || pic_url === "") {	modal_image.src = placeholder_url;	}
-	else {	modal_image.src = url;	}	
+	if (pic_url == 'null' || pic_url == 'undefined' || pic_url === "") {	document.getElementById("modal_inner_div").style.backgroundImage = placeholder_url;	}
+	else {	document.getElementById("modal_inner_div").style.backgroundImage = url;	}	
 	
 	document.getElementsByClassName("modal")[0].scrollTop = 0;
 }
@@ -330,6 +325,7 @@ previews_build();
 
 }) ();
 
+//projects_gallery();
 
 })();
 
