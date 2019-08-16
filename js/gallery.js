@@ -39,6 +39,8 @@ function modal_bg() {
 	let modal_inner_div = document.getElementById("modal_inner_div");
 	let modal_image = document.getElementById("modal_image");
 
+	modal_image.src = "";
+
 	modal_image.style.display = "none";
 
 	if (pic_url_large == 'null' || pic_url_large == 'undefined' || pic_url_large === "") 
