@@ -3,13 +3,13 @@
 // GLOBALS =======================================================================================================================================
 
 // URLs list
-const URL = ["assets/images/designs/1_small.jpg","assets/images/designs/2_small.jpg","assets/images/designs/3_small.jpg","assets/images/designs/4_small.jpg","assets/images/designs/5_small.jpg","assets/images/designs/6_small.jpg","assets/images/designs/7_small.png","assets/images/designs/8_small.png","assets/images/designs/9_small.png","assets/images/designs/10_small.png"];
-const URL_large = ["assets/images/designs/1_big.jpg","assets/images/designs/2_big.jpg","assets/images/designs/3_big.jpg","assets/images/designs/4_big.jpg","assets/images/designs/5_big.jpg","assets/images/designs/6_big.jpg","assets/images/designs/7_big.png","assets/images/designs/8_big.png","assets/images/designs/9_big.png","assets/images/designs/10_big.png"];
+const URL = ["assets/images/designs/1_small.jpg","assets/images/designs/2_small.jpg","assets/images/designs/3_small.jpg","assets/images/designs/4_small.jpg","assets/images/designs/5_small.jpg","assets/images/designs/6_small.jpg","assets/images/designs/7_small.jpg","assets/images/designs/8_small.png","assets/images/designs/9_small.png"];
+const URL_large = ["assets/images/designs/1_big.jpg","assets/images/designs/2_big.jpg","assets/images/designs/3_big.jpg","assets/images/designs/4_big.jpg","assets/images/designs/5_big.jpg","assets/images/designs/6_big.jpg","assets/images/designs/7_big.jpg","assets/images/designs/8_big.png","assets/images/designs/9_big.png"];
 
 let placeholder = "assets/images/designs/placeholder.png";
 
-const Titles = ["Art Wood Design","Sushi Weka","Amarant Labs","Roster","Brondomus","BookMark","Title 7","Title 8","Title 9","Title 10"];
-const Subtitles = ["Logo and business card design for custom wood furniture company","Logo and business card design for sushi delivery company","Logo and business card design for medical equipment supplier","Logo and business card design for Roster web-studio","Logo and business card design for cottage building company","Logo and business card design for copywriting agency","SubTitle 7","SubTitle 8","SubTitle 9","SubTitle 10"];
+const Titles = ["Art Wood Design","Sushi Weka","Amarant Labs","Roster","Brondomus","BookMark","D.Art","Title 8","Title 9"];
+const Subtitles = ["Logo and business card design for custom wood furniture company","Logo and business card design for sushi delivery company","Logo and business card design for medical equipment supplier","Logo and business card design for Roster web-studio","Logo and business card design for cottage building company","Logo and business card design for copywriting agency","Logo and business card design for digital art agency","SubTitle 8","SubTitle 9"];
 const Description = [];
 
 // grabbing gallery containers
