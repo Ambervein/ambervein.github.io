@@ -95,6 +95,10 @@
 	font-size: 0.85em;
 }
 
+#theme-toggle:checked ~ main #home .right p {
+	font-family: 'Raleway-Medium', Arial, sans-serif;
+}
+
 /* Normalize */
 * {
 	margin: 0;
@@ -677,6 +681,7 @@ p {
   		animation-timing-function: ease;
   		animation-delay: 1.5s;
   		animation-fill-mode: both;
+  		font-size: 0.97em;
 	}
 
 	#home .full h2 {
@@ -711,7 +716,7 @@ p {
 	#home .copy {
 		font-weight: normal;
 		font-family: Arial, sans-serif;
-		font-size: 0.5em;
+		font-size: 0.65em;
 		text-transform: uppercase;
 		letter-spacing: 0.5em;
 		color: var(--white-color);
