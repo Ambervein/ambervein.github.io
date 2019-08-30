@@ -85,15 +85,19 @@
 
 	//themeToggle();
 	//window.addEventListener("load", themeToggle);
-	if (themeSwitch.checked === true) {	document.getElementById("theme-button").innerHTML = 'LIGHT THEME';}
-	else {	document.getElementById("theme-button").innerHTML = 'DARK THEME';	}
+	let themeState = localStorage.getItem('isDark');
+	if (themeState === 'true') { themeSwitch.click(); }
+
+	if (themeSwitch.checked === true) {	document.getElementById("theme-button").innerHTML = 'LIGHT THEME'; localStorage.setItem('isDark', true);}
+	else {	document.getElementById("theme-button").innerHTML = 'DARK THEME'; localStorage.setItem('isDark', false);}
 	
 	function themeToggle() {
 
-		if (themeSwitch.checked === true) {	document.getElementById("theme-button").innerHTML = 'DARK THEME';}
-		else {	document.getElementById("theme-button").innerHTML = 'LIGHT THEME';	}
+		if (themeSwitch.checked === true) {	document.getElementById("theme-button").innerHTML = 'DARK THEME'; localStorage.setItem('isDark', false);}
+		else {	document.getElementById("theme-button").innerHTML = 'LIGHT THEME'; localStorage.setItem('isDark', true);}
 
 	}
+
 	
 
 

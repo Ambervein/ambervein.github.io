@@ -574,10 +574,6 @@ p {
 		border-left: solid 1px var(--white-color);
 	}
 
-	#about_me .about-button-container a {
-		width: auto;
-	}
-
 
 #home {
 	background-image: linear-gradient(45deg, var(--home-color-one), var(--home-color-two));
@@ -732,7 +728,7 @@ p {
 		flex-direction: row;
 	}
 
-	#home .lang a, #home .lang label, #about_me .about-button-container a {
+	#home .lang a, #home .lang label {
 		font-weight: normal;
 		font-family: 'Raleway-Regular', Arial, sans-serif;
 		font-size: 0.75em;
@@ -751,14 +747,66 @@ p {
 		cursor: pointer;
 	}
 
-	#home .lang a:hover, #home .lang label:hover, #about_me .about-button-container a:hover {
+	#home .lang a:hover, #home .lang label:hover {
 		background: rgba(255,255,255,0.2);
 		opacity: 1;
 	}
 
-	#home .lang a:active, #home .lang label:active, #about_me .about-button-container a:active {
+	#home .lang a:active, #home .lang label:active {
 		padding-top: 0.7em;
 	}
+
+
+	#about_me .download-cv {
+		font-weight: normal;
+		font-family: 'Raleway-Regular', Arial, sans-serif;
+		font-size: 0.75em;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: var(--white-color);
+		border: solid 1px var(--white-color);
+		padding: 0.5em;
+		width: auto;
+		text-decoration: none;
+		text-align: center;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		opacity: 0.85;
+		cursor: pointer;
+		max-height: 2.5em;
+	}
+
+	#about_me .download-cv:hover {
+		background: rgba(255,255,255,0.2);
+		opacity: 1;
+	}
+
+	#about_me .download-cv:active {
+		padding-bottom: 0.4em;
+		padding-top: 0.6em;
+	}
+
+	#about_me .download-cv span {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		justify-content: center;
+		height: auto;
+	}
+
+	#about_me .download-cv svg {
+		display: block;
+		margin-right: 0.5em;
+		width: 1.5em;
+		height: 1.5em;
+		color: var(--white-color);
+		fill: var(--white-color);
+	}
+
+
+
+
 
 	#home .lang a:nth-child(2), #home .lang label:nth-child(2) {
 		margin-left: 4px;
@@ -931,6 +979,7 @@ p {
   	user-select: none; 
   	border-bottom: solid 1px white;
   	object-fit: cover;
+  	z-index: 120;
 }
 
 .modal-image-container {
@@ -941,6 +990,20 @@ p {
 	width: 80%;
 	height: auto;
 	border: solid 1px white;
+	position: relative;
+}
+
+.modal-image-container::after {
+	content: 'Loading...';
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	color: var(--white-color);
+	font-family: 'Raleway-Regular', Arial, sans-serif;
+	font-size: 16px;
+	z-index: 90;
 }
 
 .modal__inner__counter {
@@ -1178,7 +1241,7 @@ p {
 	    font-size: 6em;		
 	}
 
-	#home .lang a, #home .lang label, #about_me .about-button-container a {
+	#home .lang a, #home .lang label {
 		font-size: 1em;
 		letter-spacing: 0.1em;
 		padding: 0.4em;
