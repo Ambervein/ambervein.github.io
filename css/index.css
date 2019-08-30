@@ -979,6 +979,7 @@ p {
   	user-select: none; 
   	border-bottom: solid 1px white;
   	object-fit: cover;
+  	min-height: 90vh;
   	z-index: 120;
 }
 
@@ -990,13 +991,14 @@ p {
 	width: 80%;
 	height: auto;
 	border: solid 1px white;
+	min-height: 70vh;
 	position: relative;
 }
 
 .modal-image-container::after {
 	content: 'Loading...';
 	position: absolute;
-	top: 50%;
+	top: 50vh;
 	left: 0;
 	width: 100%;
 	text-align: center;
