@@ -196,8 +196,9 @@ function img_curr(a,b) {
 		let img_count = b;
 
 		let href_link = '"'+URL_large[pic_current-1]+'"';
+		let _blank = '"'+'_blank'+'"';
 
-		document.getElementById("modal_inner_counter_div").innerHTML = pic_current + "  /  " + img_count + "<br> - <br>" + Subtitles[pic_current-1] + "<br> <span onclick='location.href="+href_link+"'>Full size image</span>";
+		document.getElementById("modal_inner_counter_div").innerHTML = pic_current + "  /  " + img_count + "<br> - <br>" + Subtitles[pic_current-1] + "<br> <span onclick='window.open("+href_link+","+_blank+");'>Full size image</span>";
 }
 
 // gallery navigation
