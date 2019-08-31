@@ -41,14 +41,14 @@ function modal_bg() {
 
 	modal_image.src = "";
 
-	modal_image.style.visibility = "hidden";
+	modal_image.style.display = "none";
 
 	if (pic_url_large == 'null' || pic_url_large == 'undefined' || pic_url_large === "") 
 		{	modal_image.src = placeholder_url;	}
 	else 
 		{	modal_image.src = pic_url_large;	}
 
-	modal_image.style.visibility = "visible";
+	modal_image.style.display = "flex";
 
 	// counter "pic XX of XX"
 	let img_total = gallery_container.getElementsByTagName("label").length;
@@ -278,12 +278,12 @@ function bg_change(pic_url) {
 
 	let modal_image = document.getElementById("modal_image");
 	
-	modal_image.style.visibility = "hidden";
+	modal_image.style.display = "none";
 
 	if (pic_url == 'null' || pic_url == 'undefined' || pic_url === "") {	modal_image.src = placeholder_url;	}
 	else {	modal_image.src = url;	}	
 
-	modal_image.style.visibility = "visible";
+	modal_image.style.display = "flex";
 	
 	document.getElementsByClassName("modal")[0].scrollTop = 0;
 }
