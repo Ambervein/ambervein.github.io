@@ -307,10 +307,10 @@ previews_build();
 (function projects_gallery() {
 
 	let projects_container = document.getElementById("projects_gallery");
-	const projects_URL = ["assets/images/projects/1_small.png","assets/images/projects/2_small.png","assets/images/projects/3_small.png","assets/images/projects/4_small.png","assets/images/projects/5_small.png","assets/images/projects/6_small.png","assets/images/projects/7_small.png","assets/images/projects/8_small.png","assets/images/projects/9_small.png","assets/images/projects/10_small.png"];
-	const projects_titles = ["Title 1","Title 2","Title 3","Title 4","Title 5","Title 6","Title 7","Title 8","Title 9","Title 10"];
-	const projects_subtitles = ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat elit vel velit aliquet, sed auctor mi faucibus.","SubTitle 2","SubTitle 3","SubTitle 4","SubTitle 5","SubTitle 6","SubTitle 7","SubTitle 8","SubTitle 9","SubTitle 10"];
-	const projects_links = ["#","#","#","#","#","#","#","#","#","#"];
+	const projects_URL = ["assets/images/projects/AWD_preview.jpg","assets/images/projects/Cybersec_preview.jpg","assets/images/projects/BronDomus_preview.jpg","assets/images/projects/GoTest_preview.jpg", "assets/images/projects/Roster_preview.jpg", "assets/images/projects/Sushi_preview.jpg"];
+	const projects_titles = ["Art Wood Design","Cybersec","BronDomus","GoTest", "Roster", "Sushi Weka"];
+	const projects_subtitles = ["Landing page for custom wood furniture company","Web-site for information security company","Web-site for cottage building company","Web-site for 2GIS HR testing system", "Landing page for web-studio", "Web-site for sushi delivery company"];
+	const projects_links = ["assets/projects/AWD/index.html","assets/projects/Cybersec/index.html","assets/projects/BronDomus/index.html","assets/projects/GoTest/index.html", "assets/projects/Roster/index.html", "assets/projects/Sushi/index.html"];
 	let projects_total = projects_titles.length;
 
 	projects_container.style.display = "none";

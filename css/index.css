@@ -492,6 +492,22 @@ p {
 	.footer-margin {
 		text-align: center;
 		margin-bottom: 2em;
+		padding-left: 2.5em;
+		padding-right: 2.5em;
+	}
+
+	#projects .copy {
+		font-weight: normal;
+		font-family: Arial, sans-serif;
+		font-size: 0.65em !important;
+		text-transform: uppercase;
+		letter-spacing: 0.5em;
+		line-height: 1.5em;
+		color: var(--white-color);
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		justify-content: center;
 	}
 
 #designs {
