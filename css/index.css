@@ -820,8 +820,10 @@ p {
 		fill: var(--white-color);
 	}
 
-
-
+	.button-disabled {
+		pointer-events: none;
+		opacity: 0.38 !important;
+	}
 
 
 	#home .lang a:nth-child(2), #home .lang label:nth-child(2) {

@@ -322,6 +322,7 @@ previews_build();
 		let card = document.createElement('a');
 			card.className = "card";
 			card.href = projects_links[i];
+			card.target = "_blank";
 
 		let card_img = document.createElement('div');
 			card_img.className = "card-img";
