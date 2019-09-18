@@ -9,6 +9,19 @@
 
 (function() {
 
+	document.addEventListener("scroll", scrollDetection);
+
+	function scrollDetection() {
+	  let elementPosition = document.getElementById("gallery-section").offsetTop;
+	  let elementHeight = document.documentElement.clientHeight;
+	  let documentPosition = window.pageYOffset;
+	  
+	  if (documentPosition > (elementPosition - elementHeight)) {
+		  menu_build();
+		  document.removeEventListener("scroll", scrollDetection);
+	  }
+	}
+
 // GLOBALS =======================================================================================================================================
 
 // sections list
@@ -264,7 +277,7 @@ function scrollToggle() {
 
 }
 
-menu_build(); //append gallery menu
+// menu_build(); //append gallery menu
 modal_build(); // append modal template
 keyboard_control(); // adding keyboard navigation
 

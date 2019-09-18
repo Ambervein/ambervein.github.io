@@ -6,22 +6,22 @@
 
 @font-face {
     font-family: Fira;
-    src: url(../fonts/Fira-SemiBold.ttf);
+    src: url(../fonts/Fira-SemiBold.woff2);
 }
 
 @font-face {
     font-family: Raleway-Bold;
-    src: url(../fonts/Raleway-Bold.ttf);
+    src: url(../fonts/Raleway-Bold.woff2);
 }
 
 @font-face {
     font-family: Raleway-Medium;
-    src: url(../fonts/Raleway-Medium.ttf);
+    src: url(../fonts/Raleway-Medium.woff2);
 }
 
 @font-face {
     font-family: Raleway-Regular;
-    src: url(../fonts/Raleway-Regular.ttf);
+    src: url(../fonts/Raleway-Regular.woff2);
 }
 
 /* NORMALIZE */
