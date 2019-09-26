@@ -301,11 +301,12 @@ function scrollToggle() {
 
 modal_build(); // append modal template
 keyboard_control(); // adding keyboard navigation
-previews_build();
+setTimeout(previews_build, 500);
+//previews_build();
 
 
 
-(function projects_gallery() {
+function projects_gallery() {
 
 	let projects_container = document.getElementById("projects_gallery");
 	const projects_URL = ["assets/images/projects/AWD_preview.jpg","assets/images/projects/Cybersec_preview.jpg","assets/images/projects/BronDomus_preview.jpg","assets/images/projects/GoTest_preview.jpg", "assets/images/projects/Roster_preview.jpg", "assets/images/projects/Sushi_preview.jpg"];
@@ -350,8 +351,10 @@ previews_build();
 
 	projects_container.style.display = "flex";
 
-}) ();
+}
 
+setTimeout(projects_gallery, 500);
+//projects_gallery();
 
 })();
 
