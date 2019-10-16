@@ -25,17 +25,17 @@
 
 @font-face {
     font-family: Raleway-Bold;
-    src: url(../assets/fonts/Raleway-Bold.ttf);
+    src: url(../assets/fonts/Raleway-Bold-subset.ttf);
 }
 
 @font-face {
     font-family: Raleway-Medium;
-    src: url(../assets/fonts/Raleway-Medium.ttf);
+    src: url(../assets/fonts/Raleway-Medium-subset.ttf);
 }
 
 @font-face {
     font-family: Raleway-Regular;
-    src: url(../assets/fonts/Raleway-Regular.ttf);
+    src: url(../assets/fonts/Raleway-Regular-subset.ttf);
 }
 
 @font-face {
@@ -570,7 +570,7 @@ p {
 
 	#about_me h3 {
 		font-weight: 100;
-		font-family: Arial, sans-serif;
+		font-family: 'Raleway-Regular', Arial, sans-serif;
 		font-size: 1.3em;
 		letter-spacing: 2px;
 		color: var(--white-color);
