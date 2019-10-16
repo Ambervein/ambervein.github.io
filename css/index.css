@@ -87,6 +87,7 @@
 
 #theme-toggle:checked ~ main article h2, #theme-toggle:checked ~ main article h3 {
 	font-family: 'Raleway-Bold', Arial, sans-serif;
+	font-display: swap;
 }
 
 #theme-toggle:checked ~ main article .card p {
@@ -97,6 +98,7 @@
 
 #theme-toggle:checked ~ main #home .right p {
 	font-family: 'Raleway-Medium', Arial, sans-serif;
+	font-display: swap;
 }
 
 .on-top {
@@ -325,6 +327,7 @@ h2 {
 p {
 	padding: 1em 0;
 	font-family: 'Raleway-Regular', Arial, sans-serif;
+	font-display: swap;
 	font-size: 1em;
 	color: var(--white-color);
 	line-height: 1.25em;
@@ -390,6 +393,7 @@ p {
     text-transform: uppercase;
     white-space: nowrap;
     font-family: 'Raleway-Regular', Arial, sans-serif;
+    font-display: swap;
     font-size: 12em;
     font-weight: bold;
     color: #ffffff;
@@ -438,6 +442,7 @@ p {
 	.card h3 {
 		font-weight: normal;
 		font-family: 'Roboto-Numerals', 'Raleway-Bold', Arial, sans-serif;
+		font-display: swap;
 		font-size: 0.8em;
 		color: var(--white-color);
 		text-transform: uppercase;
@@ -491,6 +496,7 @@ p {
     	font-family: 'Fira', Arial, sans-serif;
     	font-size: 6em;
     	font-weight: bold;
+    	font-display: swap;
     	color: white;
     	top: 50%;
 		left: 50%;
@@ -571,6 +577,7 @@ p {
 	#about_me h3 {
 		font-weight: 100;
 		font-family: 'Raleway-Regular', Arial, sans-serif;
+		font-display: swap;
 		font-size: 1.3em;
 		letter-spacing: 2px;
 		color: var(--white-color);
@@ -645,6 +652,7 @@ p {
 		cursor: pointer;
 		padding: 1em 0;
 		font-family: 'Raleway-Regular', Arial, sans-serif;
+		font-display: swap;
 		font-size: 0.65em;
 		color: var(--white-color);
 		line-height: 1.25em;
@@ -814,6 +822,7 @@ p {
 	#home .lang a, #home .lang label {
 		font-weight: normal;
 		font-family: 'Raleway-Regular', Arial, sans-serif;
+		font-display: swap;
 		font-size: 0.75em;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
@@ -843,6 +852,7 @@ p {
 	#about_me .download-cv {
 		font-weight: normal;
 		font-family: 'Raleway-Regular', Arial, sans-serif;
+		font-display: swap;
 		font-size: 0.75em;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
@@ -1485,6 +1495,7 @@ p {
 	p {
 		padding: 1em 0;
 		font-family: 'Raleway-Regular', Arial, sans-serif;
+		font-display: swap;
 		font-size: 1em;
 		color: var(--white-color);
 		line-height: 1.25em;
