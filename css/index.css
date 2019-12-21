@@ -96,6 +96,12 @@
 	font-size: 0.85em;
 }
 
+#theme-toggle:checked ~ main article .card .card-type {
+	font-weight: normal;
+	font-family: 'Raleway-Regular', Arial, sans-serif;
+	font-size: 0.55em;
+}
+
 #theme-toggle:checked ~ main #home .right p {
 	font-family: 'Raleway-Medium', Arial, sans-serif;
 	font-display: swap;
@@ -459,6 +465,19 @@ p {
 		color: var(--white-color);
 	}
 
+	.card .card-type {
+		display: inline-block;
+		font-weight: normal;
+		font-family: 'Raleway-Regular', Arial, sans-serif;
+		font-size: 0.55em;
+		font-display: swap;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		margin: 2em 0 0 0;
+		color: var(--white-color);
+		opacity: 0.7;
+	}
+
 	.card .card-img {
 		width: 100%;
 		height: 15em;
@@ -562,6 +581,10 @@ p {
 #designs {
 	background-image: linear-gradient(-45deg, var(--designs-color-one), var(--designs-color-two));
 	z-index: 3;
+}
+
+#designs_gallery, #projects_gallery {
+	justify-content: space-between;
 }
 
 #about_me {
@@ -746,13 +769,17 @@ p {
 
 	#home .left h1 {
 		opacity: 0;
-		line-height: 1.51em;
+		line-height: 1.2em;
 		animation-name: blink-animation;
   		animation-duration: 2s;
   		animation-iteration-count: 1;
   		animation-timing-function: ease;
   		animation-delay: 1s;
   		animation-fill-mode: both;
+	}
+
+	#home .left .ru {
+		letter-spacing: 6px;
 	}
 
 	#home .right p {
@@ -837,6 +864,28 @@ p {
 		justify-content: center;
 		opacity: 0.85;
 		cursor: pointer;
+	}
+
+	#theme-button {
+		/*width: 10em;*/
+		padding: 0;
+		margin: 0;
+	}
+
+	#theme-button:after {
+		content: 'DARK THEME';
+		font-weight: normal;
+		font-family: 'Raleway-Regular', Arial, sans-serif;
+		font-display: swap;
+		font-size: 1em;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: var(--white-color);
+		display: inline-block;
+	}
+
+	#theme-toggle:checked ~ main #home #theme-button:after {
+		content: 'LIGHT THEME';
 	}
 
 	#home .lang a:hover, #home .lang label:hover {
@@ -925,13 +974,13 @@ p {
 		text-decoration-style: solid;
 	}
 
-	.email {
+	.email span {
 		user-select : text;
 		-moz-user-select : text;
 		-webkit-user-select : text;
 	}
 
-	.email::selection {
+	.email span::selection {
 		background-color: var(--white-color);
 		color: var(--home-color-one);
 	}

@@ -3,140 +3,130 @@
 	let articles = document.getElementsByTagName("article");
 	let labels = document.getElementsByTagName("label");
 	let menu_toggle = document.getElementById("menu-toggle");
-	let state = false; //tab is opened
-	let article_id; //currently opened tab
+	let menuIsClosed_state = false; //menu state, needed for correct menu closing with returning of currently opened tab
+	let currentTab; //currently opened tab
 	
 	//saving current tab to page session for better page refresh UX
 	window.addEventListener("load", loadSession);
 
+	//sending to last opened tab after page refresh
 	function loadSession() {
-		let currentLocation = window.location.href;
+
+		//getting name of currently opened tab
 		let currentLocationHash = window.location.hash;
 		let tabName = currentLocationHash.slice(1, -4);
 		
-		//alert(tabName);
+		//if url has #hash - going to tab with id from #hash
 		if (tabName.length > 0) {
 			menu_toggle.click();
-			setTimeout(() => {document.querySelector('label[data-id="' + tabName + '"]').click();}, 250);
+			setTimeout(() => {document.querySelector('label[data-id="' + tabName + '"]').click();}, 220);
+			//timeout shows click animation to compensate blinking transition on tabs after refresh(like preloader)
 		}		
 	}
 
-	//labels getting their menu triggers
-	for(let i = 0; i < articles.length; i++) {
+	//labels getting their menu transition handlers
+	for (let i = 0; i < articles.length; i++) {
 		labels[i].addEventListener("click", articles_toggle);
 	}
 
 	//close button gets close function
 	menu_toggle.addEventListener("click", close);
 
-	//catching click event on label, getting data-id of event target label, opening menu and push up article with same id OR closing menu
+	//handling click on title label, getting data-id of target label, opening menu and pushing up tab with same id OR closing menu
 	function articles_toggle(event) {
 
-		article_id = this.dataset.id;
+		//picking up currently opened tab id
+		currentTab = this.dataset.id;
+
+		//pushing up new location #hash to address bar 
 		location.hash = this.dataset.id + '_tab';
 		
-
-		if(menu_toggle.checked == true) {
-			for(let i = 0; i < articles.length; i++) {	articles[i].style.transform = "translateX(" + (100) + "%)";	articles[i].scrollTop = 0;}
-			document.getElementById(article_id).style.transform = "translateX(" + (0) + "%)";
-			state = true;
+		//if menu opened - clicking on any title label will center chosen tab and push away others
+		if (menu_toggle.checked == true) {
+			for (let i = 0; i < articles.length; i++) {	articles[i].style.transform = "translateX(" + (100) + "%)";	articles[i].scrollTop = 0;}
+			document.getElementById(currentTab).style.transform = "translateX(" + (0) + "%)";
+			menuIsClosed_state = true;
 		}
 
 		else 
 
+		//if menu closed - clicking on menu icon will open it 
 		{
-			for(let i = 0; i < articles.length; i++) {	articles[i].style.transform = "translate(calc(0% + " + (i+1)*45 + "px), calc(0% + " + (i+1)*45 + "px))";}
-			state = false;
+			for (let i = 0; i < articles.length; i++) {	articles[i].style.transform = "translate(calc(0% + " + (i+1)*45 + "px), calc(0% + " + (i+1)*45 + "px))";}
+			menuIsClosed_state = false;
 		}
 
-		return article_id;
+		return currentTab;
 		
 		}
 
 	//close button function
 	function close() {
 
-		if(menu_toggle.checked == false && state == false) {
+		if (menu_toggle.checked == false && menuIsClosed_state == false) {
 			for(let i = 0; i < articles.length; i++) {	articles[i].style.transform = "translateX(" + (100) + "%)";	articles[i].scrollTop = 0;}
-			document.getElementById(article_id).style.transform = "translateX(" + (0) + "%)";
-			state = true;
+			document.getElementById(currentTab).style.transform = "translateX(" + (0) + "%)";
+			menuIsClosed_state = true;
 		}
 	}
 
-	//skills button at home article sends user to skills article
-	document.getElementById("skills").addEventListener("click", skills);
+	//skills link in home tab sends user to skills tab
+	document.getElementById("skills").addEventListener("click", goToSkills);
 
-	function skills() {
+	function goToSkills() {
 
 		let about = document.querySelector('label[data-id="about_me"]');
 		let home = document.querySelector('label[data-id="home"]');
 
-		setTimeout(home.click(), 200);
-		setTimeout(abc, 300);
-
-		function abc () {
-			setTimeout(about.click(), 200);
-		}
+		//simulating live user's click
+		setTimeout(home.click(), 200); //open menu
+		setTimeout(()=>{setTimeout(about.click(), 200);}, 300); //wait and click 'about' tab
 	
 	}
 
-	
+	//footer home link handler
 	const footer_home = document.querySelectorAll("div[data-home='go-home']");
-
-	// for (let elem of footer_home) {   elem.addEventListener("click", go_home);  }
-	for (i = 0; i < footer_home.length; i++) {	footer_home[i].addEventListener("click", go_home);	};
+    for (let elem of footer_home) {   elem.addEventListener("click", go_home);  }
 
 	function go_home() {
 
-		let currentLocation = window.location.href;
-		let currentLocationHash = window.location.hash;
-		let tabName = currentLocationHash.slice(1, -4);
-
-		let currentTab = document.querySelector('label[data-id='+tabName+']');
+		let current = document.querySelector('label[data-id='+currentTab+']');
 		let home = document.querySelector('label[data-id="home"]');
 
-		setTimeout(currentTab.click(), 200);
-		setTimeout(abcd, 300);
-
-		function abcd () {
-			setTimeout(home.click(), 200);
-		}
+		//simulating live user's click
+		setTimeout(current.click(), 200);
+		setTimeout(()=>{setTimeout(home.click(), 200);}, 300);
 	
 	}
 
-	document.getElementById("theme-button").addEventListener("click", themeToggle);
+	//handling theme switch
+	let themeButton = document.getElementById("theme-button");
 	let themeSwitch = document.getElementById("theme-toggle");
 
-	//themeToggle();
-	//window.addEventListener("load", themeToggle);
-	let themeState = localStorage.getItem('isDark');
-	if (themeState === 'true') { themeSwitch.click(); }
+	themeButton.addEventListener("click", themeToggle);
 
-	if (themeSwitch.checked === true) {	document.getElementById("theme-button").innerHTML = 'LIGHT THEME'; localStorage.setItem('isDark', true);}
-	else {	document.getElementById("theme-button").innerHTML = 'DARK THEME'; localStorage.setItem('isDark', false);}
-	
+	//checking saved theme state
+	let themeSwitch_state = localStorage.getItem('isDark');
+	if (themeSwitch_state === 'true') { themeSwitch.click(); }
+
 	function themeToggle() {
 
-		if (themeSwitch.checked === true) {	document.getElementById("theme-button").innerHTML = 'DARK THEME'; localStorage.setItem('isDark', false);}
-		else {	document.getElementById("theme-button").innerHTML = 'LIGHT THEME'; localStorage.setItem('isDark', true);}
+		if (themeSwitch.checked === true) {	localStorage.setItem('isDark', false);}
+	 	else {	localStorage.setItem('isDark', true);}
 
 	}
 
-
+	//scrolling top button handler
 	document.getElementById("on_top").addEventListener("click", scrollToTop);
 
 	function scrollToTop() {
 
-		let currentLocationHash = window.location.hash;
-		let tabName = currentLocationHash.slice(1, -4);
-		
-		document.getElementById(tabName).scrollTop = 0;
-			
+		document.getElementById(currentTab).scrollTop = 0;
+
 	}
 
-	// document.addEventListener("scroll", scrollDown);
-
-	for(let i = 0; i < articles.length; i++) {
+	//scrolling top button visibility switching
+	for (let i = 0; i < articles.length; i++) {
 		articles[i].addEventListener("scroll", scrollDown);
 	}
 
@@ -149,7 +139,14 @@
 		else {document.getElementById("on_top").style.display = "none";}
 
 	}
-	
 
+
+	//disable tab focus
+	setTimeout(()=>{
+		let tabbableElements = document.querySelectorAll('button, a, input, select, textarea, label, article, section');
+		for (let i = 0; i < tabbableElements.length; i++ ) {   tabbableElements[i].setAttribute('tabindex', '-1'); }
+	}, 1500);
+
+	
 
 })();

@@ -45,7 +45,7 @@
 	<article class="" id="projects" data-title="projects">
 
 		<label for="menu-toggle" class="heading-label" data-id="projects">
-			<div class="menu-icon">
+			<div class="menu-icon" title="Menu">
 				<span></span><span></span><span></span>
 			</div>
 		<h2>Projects</h2>
@@ -103,7 +103,7 @@
 	<article class="" id="designs" data-title="designs">
 
 		<label for="menu-toggle" class="heading-label" data-id="designs">
-			<div class="menu-icon">
+			<div class="menu-icon" title="Menu">
 				<span></span><span></span><span></span>
 			</div>
 		<h2>Designs</h2>
@@ -115,7 +115,7 @@
 		<div class="container">
 				
 			<div class="full">
-				<h2>Graphic design projects</h2>
+				<h2>Design projects</h2>
 			</div>
 
 			<div class="content" id="designs_gallery">
@@ -160,7 +160,7 @@
 	<article class="" id="about_me" data-title="about me">
 
 		<label for="menu-toggle" class="heading-label" data-id="about_me">
-			<div class="menu-icon">
+			<div class="menu-icon" title="Menu">
 				<span></span><span></span><span></span>
 			</div>
 		<h2>About me</h2>
@@ -222,7 +222,7 @@
 
 					</div>
 
-					<div class="about-button-container">
+					<!-- <div class="about-button-container">
 							<a href="#" class="download-cv button-disabled">
 
 								<svg><use xlink:href="#file_download"></use></svg>
@@ -230,7 +230,7 @@
 								
 							</a>
 
-					</div>
+					</div> -->
 
 				</div>
 
@@ -255,7 +255,7 @@
 	<article class="" id="home" data-title="home">
 
 		<label for="menu-toggle" class="heading-label" data-id="home">
-			<div class="menu-icon">
+			<div class="menu-icon" title="Menu" id="home-menu-icon">
 				<span></span><span></span><span></span>
 			</div>
 		<h2>Home</h2>
@@ -264,20 +264,20 @@
 		</div>
 		</label>
 
-			<div class="container">
+			<div class="container" itemscope itemtype="http://schema.org/Person">
 				
 				<div class="full">
 
 				</div>
 
 				<div class="half left">
-					<h1>Vladimir <br>Yeremeyev</h1>
+					<h1 itemprop="name">Vladimir <br>Yeremeyev</h1>
 				</div>
 				
 				<div class="half right">
 					
 					<p>
-						Hello there. I am junior web-developer with good knowledge of front-end techniques and web-design practices. I chose the front-end for the opportunity to create something not only functional, but also beautiful. I stand for structure and order, quality, details and optimization. I offer my skills and knowledge necessary to create your website with high-quality implementation in nice turnaround times. 
+						Hello there. I am junior frontend-developer with good knowledge of web techniques and web-design practices. I stand for structure and order, quality, details and optimization. I offer my skills and knowledge to create your website with high-quality implementation in nice turnaround times. 
 
 						<span id="skills">More about my skills</span>
 
@@ -285,13 +285,12 @@
 
 					<div class="semi-footer">
 						
-						 <!-- <div class="copy">&copy; Ambervein, 2019</div> -->
 						 <div>
-						 	<p class="email">E-mail : flexer2117@gmail.com</p>
+						 	<p class="email">E-mail : <span itemprop="email" id="email-span">flexer2117@gmail.com</span></p>
 						 </div>
 
 						 <div class="lang">
-						 	<a href="index_ru.html">RU</a>
+						 	<a href="index_ru.html" id="lang">RU</a>
 						 	<label for="theme-toggle" id="theme-button"></label>
 						 </div>
 
@@ -303,42 +302,42 @@
 					
 					<div class="socials">
 
-						<a href="https://codepen.io/Ambervein/" class="social-icon-container" target = "_blank">
+						<a href="https://codepen.io/Ambervein/" class="social-icon-container" target = "_blank" itemprop="sameAs">
 							<svg class="social-icon">
 							  <use xlink:href="#codepen"></use>
 							</svg>
 							<h3>Codepen</h3>
 						</a>
 
-						<a href="https://www.facebook.com/vladimir.yeremeyev.90" class="social-icon-container" target = "_blank">
+						<a href="https://www.facebook.com/vladimir.yeremeyev.90" class="social-icon-container" target = "_blank" itemprop="sameAs">
 							<svg class="social-icon">
 							  <use xlink:href="#fb"></use>
 							</svg>
 							<h3>Facebook</h3>
 						</a>
 						
-						<a href="https://github.com/Ambervein" class="social-icon-container" target = "_blank">
+						<a href="https://github.com/Ambervein" class="social-icon-container" target = "_blank" itemprop="sameAs">
 							<svg class="social-icon">
 							  <use xlink:href="#github"></use>
 							</svg>
 							<h3>Github</h3>
 						</a>
 
-						<a href="https://www.linkedin.com/in/ambervein/" class="social-icon-container" target = "_blank">
+						<a href="https://www.linkedin.com/in/ambervein/" class="social-icon-container" target = "_blank" itemprop="sameAs">
 							<svg class="social-icon">
 							  <use xlink:href="#linkedin"></use>
 							</svg>
 							<h3>LinkedIn</h3>
 						</a>
 
-						<a href="mailto:flexer2117@gmail.com" class="social-icon-container" target = "_blank">
+						<a href="mailto:flexer2117@gmail.com" class="social-icon-container" target = "_blank" itemprop="sameAs">
 							<svg class="social-icon">
 							  <use xlink:href="#gmail"></use>
 							</svg>
 							<h3>Gmail</h3>
 						</a>
 
-						<a href="https://vk.com/ambervein" class="social-icon-container" target = "_blank">
+						<a href="https://vk.com/ambervein" class="social-icon-container" target = "_blank" itemprop="sameAs">
 							<svg class="social-icon">
 							  <use xlink:href="#vk"></use>
 							</svg>
@@ -348,9 +347,6 @@
 					</div>
 
 				</div>
-
-				
-
 
 			</div>
 			
@@ -406,7 +402,7 @@
 
 <!-- SCRIPTS -->
 <script src="js/index.js"></script>
-<script src="js/gallery.js"></script>
+<script src="js/gallery_test.js"></script>
 
 </body>
 </html>
