@@ -46,6 +46,9 @@
 			for (let i = 0; i < articles.length; i++) {	articles[i].style.transform = "translateX(" + (100) + "%)";	articles[i].scrollTop = 0;}
 			document.getElementById(currentTab).style.transform = "translateX(" + (0) + "%)";
 			menuIsClosed_state = true;
+
+			for (let i = 0; i < articles.length; i++) { articles[i].style.overflowY = "scroll";}
+
 		}
 
 		else 
@@ -54,6 +57,8 @@
 		{
 			for (let i = 0; i < articles.length; i++) {	articles[i].style.transform = "translate(calc(0% + " + (i+1)*45 + "px), calc(0% + " + (i+1)*45 + "px))";}
 			menuIsClosed_state = false;
+
+			for (let i = 0; i < articles.length; i++) { articles[i].style.overflowY = "hidden";}
 		}
 
 		return currentTab;
@@ -67,6 +72,8 @@
 			for(let i = 0; i < articles.length; i++) {	articles[i].style.transform = "translateX(" + (100) + "%)";	articles[i].scrollTop = 0;}
 			document.getElementById(currentTab).style.transform = "translateX(" + (0) + "%)";
 			menuIsClosed_state = true;
+
+			for (let i = 0; i < articles.length; i++) { articles[i].style.overflowY = "scroll";}
 		}
 	}
 
@@ -95,7 +102,9 @@
 
 		//simulating live user's click
 		setTimeout(current.click(), 200);
-		setTimeout(()=>{setTimeout(home.click(), 200);}, 300);
+		setTimeout(()=>{setTimeout(home.click(), 200); scrollDown();}, 300);
+
+		// document.getElementById("on_top").style.display = "none";
 	
 	}
 
@@ -142,11 +151,8 @@
 
 
 	//disable tab focus
-	setTimeout(()=>{
-		let tabbableElements = document.querySelectorAll('button, a, input, select, textarea, label, article, section');
-		for (let i = 0; i < tabbableElements.length; i++ ) {   tabbableElements[i].setAttribute('tabindex', '-1'); }
-	}, 1500);
-
+	setTimeout(()=> {	let tabbableElements = document.querySelectorAll('button, a, input, select, textarea, label, article, section');
+		for (let i = 0; i < tabbableElements.length; i++) { tabbableElements[i].setAttribute('tabIndex', '-1'); }}, 1500);
 	
 
 })();
