@@ -5,6 +5,13 @@
 const DESIGNS = [
 
 	{
+		title: "Nordstal",
+		subtitle: "Landing page design for steel company",
+		type: "web-design",
+		URL_preview: "assets/images/designs/12_small.jpg",
+		URL_large: "assets/images/designs/12_big.jpg"
+	},
+	{
 		title: "Art Wood Design",
 		subtitle: "Landing page design for custom wood furniture company",
 		type: "web-design",
