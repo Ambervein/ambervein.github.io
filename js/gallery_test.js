@@ -152,8 +152,6 @@ function previews_build() {
 
 	let img_amount = DESIGNS.length;
 
-	console.log('Кол-во карточек получено:' + img_amount);
-
 	for (i = 0; i < img_amount; i++) {
 
 		// gallery previews
@@ -376,72 +374,10 @@ function bg_change(pic_url) {
 	document.getElementsByClassName("modal")[0].scrollTop = 0;
 }
 
-// disable page scroll while modal is opened
-/*
-function scrollToggle() {
-	
-	if(this.checked == true) { document.body.style.overflow = "hidden"; }
-	else { document.body.style.overflow = ""; };
-
-}
-*/
 
 modal_build(); // append modal template
 keyboard_control(); // adding keyboard navigation
 setTimeout(previews_build, 500);
-//previews_build();
-
-
-
-function projects_gallery() {
-
-	let projects_container = document.getElementById("projects_gallery");
-	const projects_URL = ["assets/images/projects/AWD_preview.jpg","assets/images/projects/Cybersec_preview.jpg","assets/images/projects/BronDomus_preview.jpg","assets/images/projects/GoTest_preview.jpg", "assets/images/projects/Roster_preview.jpg", "assets/images/projects/Sushi_preview.jpg"];
-	const projects_titles = ["Art Wood Design","Cybersec","BronDomus","GoTest", "Roster", "Sushi Weka"];
-	const projects_subtitles = ["Landing page for custom wood furniture company","Web-site for information security company","Web-site for cottage building company","Web-site for 2GIS HR testing system", "Landing page for web-studio", "Web-site for sushi delivery company"];
-	const projects_links = ["assets/projects/AWD/index.html","assets/projects/Cybersec/index.html","assets/projects/BronDomus/index.html","assets/projects/GoTest/index.html", "assets/projects/Roster/index.html", "assets/projects/Sushi/index.html"];
-	let projects_total = projects_titles.length;
-
-	projects_container.style.display = "none";
-
-	while (projects_container.firstChild) {	projects_container.firstChild.remove();	}
-
-	for (i = 0; i < projects_total; i++) {
-
-		let card = document.createElement('a');
-			card.className = "card";
-			card.href = projects_links[i];
-			card.target = "_blank";
-
-		let card_img = document.createElement('div');
-			card_img.className = "card-img";
-			let img_url = "url(" + projects_URL[i]; + ")";
-			card_img.style.backgroundImage = img_url;
-
-		let card_desc = document.createElement('div');
-			card_desc.className = "card-desc";
-
-		let card_title = document.createElement('H3');
-		card_title.innerHTML = projects_titles[i];
-
-		let card_subtitle = document.createElement('p');
-		card_subtitle.innerHTML = projects_subtitles[i];
-
-		card_desc.appendChild(card_title);
-		card_desc.appendChild(card_subtitle);
-
-		card.appendChild(card_img);
-		card.appendChild(card_desc);
-
-		projects_container.appendChild(card);
-	}
-
-	projects_container.style.display = "flex";
-
-}
-
-setTimeout(projects_gallery, 500);
-//projects_gallery();
 
 })();
 

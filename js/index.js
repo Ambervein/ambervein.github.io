@@ -77,9 +77,7 @@
 		}
 	}
 
-	//skills link in home tab sends user to skills tab
-	document.getElementById("skills").addEventListener("click", goToSkills);
-
+	
 	function goToSkills() {
 
 		let about = document.querySelector('label[data-id="about_me"]');
@@ -154,8 +152,5 @@
 	setTimeout(()=> {	let tabbableElements = document.querySelectorAll('button, a, input, select, textarea, label, article, section');
 		for (let i = 0; i < tabbableElements.length; i++) { tabbableElements[i].setAttribute('tabIndex', '-1'); }}, 1500);
 
-
-	console.log('%c%s', 'color: #da1b60; font: 1.2rem/1 Verdana;', '\n Главный вопрос жизни, вселенной и всего такого \n \n Раз уж Вас сюда занесло... В этом портфолио нет "продающей структуры", каких-либо решений для улучшения доступности, тысячи брейкпоинтов под все-все устройства на свете. \n \n Как нет и моего фото, очередной очень интересной биографии, работ мало, а на те, что выставлены, нет претензий на авторские права клиентов с аутсорса. \n \n Данная страница была создана просто для того, чтобы быть созданной. Ну и для агрегации ссылок на соц. сети, если уж кто-то сюда попал.');
-	
 
 })();
