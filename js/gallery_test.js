@@ -3,7 +3,21 @@
 // GLOBALS =======================================================================================================================================
 
 const DESIGNS = [
-
+	
+	{
+		title: "Mailifier.io",
+		subtitle: "Dashboard design/coding/programming for email verification company",
+		type: "web-design / coding / react js",
+		URL_preview: "assets/images/designs/14_small.jpg",
+		URL_large: "assets/images/designs/14_big.jpg"
+	},
+	{
+		title: "Mailifier.io",
+		subtitle: "Landing page design/coding for email verification company",
+		type: "web-design / coding",
+		URL_preview: "assets/images/designs/13_small.jpg",
+		URL_large: "assets/images/designs/13_big.jpg"
+	},
 	{
 		title: "Nordstal",
 		subtitle: "Landing page design for steel company",
@@ -13,8 +27,8 @@ const DESIGNS = [
 	},
 	{
 		title: "Art Wood Design",
-		subtitle: "Landing page design for custom wood furniture company",
-		type: "web-design",
+		subtitle: "Landing page design/coding for custom wood furniture company",
+		type: "web-design / coding",
 		URL_preview: "assets/images/designs/11_small.jpg",
 		URL_large: "assets/images/designs/11_big.jpg"
 	},
