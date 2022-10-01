@@ -211,7 +211,7 @@ function previews_build() {
 	}
 
 	// show container back
-	gallery_container.style.display = "flex";
+	gallery_container.style.display = "grid";
 
 }
 
