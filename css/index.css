@@ -512,7 +512,7 @@ p {
 		letter-spacing: 0.5em;
 	}
 
-	.card p {
+	.card p, .card a {
 		font-weight: normal;
 		font-family: 'Raleway-Regular', Arial, sans-serif;
 		font-size: 0.85em;
@@ -520,6 +520,17 @@ p {
 		letter-spacing: 2px;
 		padding: 3em 0 0 0;
 		color: var(--white-color);
+	}
+
+	.card a {
+		padding-top: 20px;
+		opacity: 0.8;
+		z-index: 100;
+		cursor: pointer;
+	}
+
+	.card a:hover {
+		opacity: 1;
 	}
 
 	.card .card-type {

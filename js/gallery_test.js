@@ -16,7 +16,8 @@ const DESIGNS = [
 		subtitle: "Landing page design/coding for email verification company",
 		type: "web-design / coding",
 		URL_preview: "assets/images/designs/13_small.jpg",
-		URL_large: "assets/images/designs/13_big.jpg"
+		URL_large: "assets/images/designs/13_big.jpg",
+		demo: "https://mailifier.io/"
 	},
 	{
 		title: "Nordstal",
@@ -30,7 +31,8 @@ const DESIGNS = [
 		subtitle: "Landing page design/coding for custom wood furniture company",
 		type: "web-design / coding",
 		URL_preview: "assets/images/designs/11_small.jpg",
-		URL_large: "assets/images/designs/11_big.jpg"
+		URL_large: "assets/images/designs/11_big.jpg",
+		demo: "assets/projects/AWD/index.html"
 	},
 	{
 		title: "Profitape",
@@ -200,8 +202,14 @@ function previews_build() {
 		card_type.className = "card-type";
 		card_type.innerHTML = DESIGNS[i].type;
 
+		let card_link = document.createElement('a');
+		card_link.innerHTML = "Live demo";
+		card_link.target = "_blank";
+		card_link.href = DESIGNS[i].demo;
+
 		card_desc.appendChild(card_title);
 		card_desc.appendChild(card_subtitle);
+		if(DESIGNS[i].demo !== undefined) {card_desc.appendChild(card_link);}
 		card_desc.appendChild(card_type);
 
 		card.appendChild(card_img);
